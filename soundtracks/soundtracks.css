@@ -1,0 +1,45 @@
+*, *::before, *::after {     /* <-  * : for every type of element */
+    box-sizing: border-box; /* <- easier to work with widths and heights? */
+}
+
+body {
+    background-color: white;
+    margin: 0;          /* <- removing any margins */
+    min-height: 100vh; /* <- to center the piano */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piano {
+    display: flex;  /* <- this way, all keys will align next to each other (side by side), instead of on top of each other */
+}
+
+.key {
+    /*  TO USE CSS VARS and minimize code, might do it later    ###    https://youtu.be/vjco5yKZpU8?t=570 */
+}
+
+.white {
+    width: 50px;
+    height: 150px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.white.pressed {
+    background-color: #CCC;
+}
+
+.black {
+    width: 25px;
+    height: 80px;
+    background-color: black;
+    /* to make the black keys show up on top of the whites keys:    */
+    margin-left: -12px;     /* <- "half" of black keys width */
+    margin-right: -12px;   /* <- other "half" of black keys width; "half" because half of 25px would be 12,5 */
+    z-index: 2;
+}
+
+.black.pressed {
+    background-color: #333;
+}
